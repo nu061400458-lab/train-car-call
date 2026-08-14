@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>のりものをよぼう！</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- ========================================
+         アプリ全体
+    ======================================== -->
+
+    <main class="app">
+
+
+        <!-- ========================================
+             ホーム画面
+        ======================================== -->
+
+        <section
+            id="homeScreen"
+            class="screen home-screen"
+        >
+
+            <h1 class="home-title">
+                🚗 のりものをよぼう！
+            </h1>
+
+            <p class="home-message">
+                のりものを えらんでね！
+            </p>
+
+
+            <!-- のりもの選択ボタン -->
+
+            <div class="vehicle-list">
+
+
+                <!-- 電車 -->
+
+                <button
+                    class="vehicle-button train-button"
+                    data-vehicle="train"
+                >
+
+                    <span class="vehicle-icon">
+                        🚃
+                    </span>
+
+                    <span class="vehicle-name">
+                        でんしゃ
+                    </span>
+
+                </button>
+
+
+                <!-- パトカー -->
+
+                <button
+                    class="vehicle-button police-button"
+                    data-vehicle="police"
+                >
+
+                    <span class="vehicle-icon">
+                        🚓
+                    </span>
+
+                    <span class="vehicle-name">
+                        パトカー
+                    </span>
+
+                </button>
+
+
+                <!-- 救急車 -->
+
+                <button
+                    class="vehicle-button ambulance-button"
+                    data-vehicle="ambulance"
+                >
+
+                    <span class="vehicle-icon">
+                        🚑
+                    </span>
+
+                    <span class="vehicle-name">
+                        きゅうきゅうしゃ
+                    </span>
+
+                </button>
+
+
+                <!-- 消防車 -->
+
+                <button
+                    class="vehicle-button fire-button"
+                    data-vehicle="fire"
+                >
+
+                    <span class="vehicle-icon">
+                        🚒
+                    </span>
+
+                    <span class="vehicle-name">
+                        しょうぼうしゃ
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================
+             ゲーム画面
+        ======================================== -->
+
+        <section
+            id="gameScreen"
+            class="screen game-screen hidden"
+        >
+
+
+            <!-- 上部 -->
+
+            <div class="game-header">
+
+                <button
+                    id="homeButton"
+                    class="home-button"
+                >
+                    🏠 ホームへ
+                </button>
+
+            </div>
+
+
+
+            <!-- タイトル -->
+
+            <h2
+                id="gameTitle"
+                class="game-title"
+            >
+                🚃 でんしゃをよぼう！
+            </h2>
+
+
+
+            <!-- ========================================
+                 ゲームシーン
+            ======================================== -->
+
+            <section class="scene">
+
+                <div
+                    id="sceneBackground"
+                    class="scene-background"
+                >
+
+
+                    <!-- 雲 -->
+
+                    <div class="cloud cloud-1">
+                        ☁️
+                    </div>
+
+                    <div class="cloud cloud-2">
+                        ☁️
+                    </div>
+
+
+
+                    <!-- 道路・線路 -->
+
+                    <div
+                        id="road"
+                        class="road"
+                    >
+
+                        <div class="road-line road-line-1"></div>
+                        <div class="road-line road-line-2"></div>
+
+                    </div>
+
+
+
+                    <!-- 駅 -->
+
+                    <div
+                        id="station"
+                        class="station"
+                    >
+
+                        <div class="station-name">
+                            えき
+                        </div>
+
+                        <div class="station-building">
+                            🚉
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- 電車用の線路 -->
+
+                    <div
+                        id="rail"
+                        class="rail"
+                    >
+
+                        <div class="rail-line rail-line-1"></div>
+                        <div class="rail-line rail-line-2"></div>
+
+                        <div class="rail-sleeper sleeper-1"></div>
+                        <div class="rail-sleeper sleeper-2"></div>
+                        <div class="rail-sleeper sleeper-3"></div>
+                        <div class="rail-sleeper sleeper-4"></div>
+                        <div class="rail-sleeper sleeper-5"></div>
+                        <div class="rail-sleeper sleeper-6"></div>
+                        <div class="rail-sleeper sleeper-7"></div>
+                        <div class="rail-sleeper sleeper-8"></div>
+                        <div class="rail-sleeper sleeper-9"></div>
+                        <div class="rail-sleeper sleeper-10"></div>
+                        <div class="rail-sleeper sleeper-11"></div>
+                        <div class="rail-sleeper sleeper-12"></div>
+
+                    </div>
+
+
+
+                    <!-- ========================================
+                         乗り物
+                    ======================================== -->
+
+                    <div
+                        id="vehicle"
+                        class="vehicle"
+                    >
+
+                        <!-- 電車 -->
+
+                        <div
+                            id="trainVehicle"
+                            class="vehicle-image train-vehicle"
+                        >
+
+                            <div class="train-body">
+
+                                <div class="train-window">
+                                    👤
+                                </div>
+
+                                <div class="train-window">
+                                    👤
+                                </div>
+
+                                <div class="train-window">
+                                    👤
+                                </div>
+
+                            </div>
+
+                            <div class="train-front">
+                                🚃
+                            </div>
+
+                            <div class="wheel wheel-1"></div>
+                            <div class="wheel wheel-2"></div>
+                            <div class="wheel wheel-3"></div>
+
+                        </div>
+
+
+
+                        <!-- パトカー -->
+
+                        <div
+                            id="policeVehicle"
+                            class="vehicle-image police-vehicle"
+                        >
+
+                            <div class="car police-car">
+
+                                <div class="car-light red-light"></div>
+                                <div class="car-light blue-light"></div>
+
+                                <div class="car-window"></div>
+
+                                <div class="car-body-icon">
+                                    🚓
+                                </div>
+
+                                <div class="car-wheel car-wheel-1"></div>
+                                <div class="car-wheel car-wheel-2"></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- 救急車 -->
+
+                        <div
+                            id="ambulanceVehicle"
+                            class="vehicle-image ambulance-vehicle"
+                        >
+
+                            <div class="car ambulance-car">
+
+                                <div class="ambulance-cross">
+                                    ＋
+                                </div>
+
+                                <div class="car-window"></div>
+
+                                <div class="car-body-icon">
+                                    🚑
+                                </div>
+
+                                <div class="car-wheel car-wheel-1"></div>
+                                <div class="car-wheel car-wheel-2"></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- 消防車 -->
+
+                        <div
+                            id="fireVehicle"
+                            class="vehicle-image fire-vehicle"
+                        >
+
+                            <div class="car fire-car">
+
+                                <div class="fire-ladder">
+                                    ━━━━━
+                                </div>
+
+                                <div class="car-window"></div>
+
+                                <div class="car-body-icon">
+                                    🚒
+                                </div>
+
+                                <div class="car-wheel car-wheel-1"></div>
+                                <div class="car-wheel car-wheel-2"></div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ========================================
+                 メッセージ
+            ======================================== -->
+
+            <p
+                id="message"
+                class="message"
+            >
+                のりものを よんでみよう！
+            </p>
+
+
+
+            <!-- ========================================
+                 操作ボタン
+            ======================================== -->
+
+            <button
+                id="actionButton"
+                class="action-button"
+            >
+                🚃 よんでみよう！
+            </button>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
